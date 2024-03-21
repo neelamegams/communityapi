@@ -1,7 +1,4 @@
-const Nominatim = require('nominatim-geocoder')
 let axios = require('axios');
-const geocoder = new Nominatim()
-
 var express = require('express')
 var app = express()
 
