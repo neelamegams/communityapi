@@ -1,0 +1,29 @@
+<html>
+    <head>
+     
+    </head>
+    <body>
+        <button onclick="runTest();">Run the test!</button>
+        <div id="result"></div>
+
+
+        <script>
+           async function getPosts() {
+                const response = await fetch("/api");
+                return await response.json();
+            }
+
+            
+            async function runTest() {
+              // Run the test and do something with the results...
+              var demo = document.getElementById("result");
+              var posts = await getPosts();
+              //demo.innerHTML = JSON.stringify(posts);  
+
+              posts.results.forEach(post => demo.innerHTML += "<ul><li><a href="+post.view_href+">"+post.subject+"</a></li><li>"+ post.address +"</li></ul>");
+            }
+          </script>
+    </body>
+</html>
+
+  
